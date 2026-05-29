@@ -1,0 +1,17 @@
+﻿@model IEnumerable<SmartDiary.Web.Models.Tasks>
+
+<h2>Список задач</h2>
+
+@if (!Model.Any())
+{
+    <p>Задач пока нет.</p>
+}
+else
+{
+    <ul>
+        @foreach (var task in Model)
+        {
+            <li>@task.Title</li>
+        }
+    </ul>
+}

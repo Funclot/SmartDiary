@@ -1,0 +1,22 @@
+﻿@model LoginViewModel
+
+<h2>Вход</h2>
+
+<form method="post">
+    <div>
+        <label>Имя пользователя</label>
+        <input asp-for="Username" />
+    </div>
+
+    <div>
+        <label>Пароль</label>
+        <input asp-for="Password" />
+    </div>
+
+    <div>
+        <input asp-for="RememberMe" />
+        <label asp-for="RememberMe"></label>
+    </div>
+
+    <button type="submit">Войти</button>
+</form>

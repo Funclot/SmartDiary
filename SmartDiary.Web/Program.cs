@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SmartDiary.Web.Data;
 using SmartDiary.Web.Models;
+using SmartDiary.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ITaskService, TaskService>();
 
 // SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
