@@ -1,17 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SmartDiary.Web.Models;
 
 namespace SmartDiary.Web.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<User>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
     }
 
-    // DbSet для каждой сущности
-    public DbSet<User> Users { get; set; }
     public DbSet<Project> Projects { get; set; }
     public DbSet<Tag> Tags { get; set; }
     public DbSet<Tasks> Tasks { get; set; }
@@ -21,22 +20,17 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Настройка уникальности Email в User
-        modelBuilder.Entity<User>()
-            .HasIndex(u => u.Email)
-            .IsUnique();
-
-        // Настройка уникальности Username в User
-        modelBuilder.Entity<User>()
-            .HasIndex(u => u.Username)
-            .IsUnique();
-
-        // Настройка уникальности Name в рамках одного пользователя для Tag
+        // Уникальность тегов одного пользователя
         modelBuilder.Entity<Tag>()
             .HasIndex(t => new { t.Name, t.OwnerId })
             .IsUnique();
 
-        // Настройка связей
+        // Уникальность проектов одного пользователя
+        modelBuilder.Entity<Project>()
+            .HasIndex(p => new { p.Name, p.OwnerId })
+            .IsUnique();
+
+        // Связи
         modelBuilder.Entity<Project>()
             .HasOne(p => p.Owner)
             .WithMany(u => u.Projects)
@@ -61,7 +55,6 @@ public class ApplicationDbContext : DbContext
             .HasForeignKey(t => t.ProjectId)
             .OnDelete(DeleteBehavior.SetNull);
 
-        // Настройка связи многие-ко-многим через TaskTag
         modelBuilder.Entity<TaskTag>()
             .HasOne(tt => tt.Task)
             .WithMany(t => t.TaskTags)

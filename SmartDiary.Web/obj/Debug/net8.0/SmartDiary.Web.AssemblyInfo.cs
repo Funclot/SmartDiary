@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartDiary.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca39d0e10eaa7a738919bc1aeab1c3b82b164ac8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1069e7353370e958e0e2afacefdd68e6e5ec4d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartDiary.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartDiary.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
