@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartDiary.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d9b40ae1f6008d853e91ced2ecf6629d7194ab9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca39d0e10eaa7a738919bc1aeab1c3b82b164ac8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartDiary.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartDiary.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
