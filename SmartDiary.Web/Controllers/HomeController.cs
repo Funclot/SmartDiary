@@ -1,6 +1,7 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SmartDiary.Web.Models;
+using SmartDiary.Web.Models;
+using System.Diagnostics;
 
 namespace SmartDiary.Web.Controllers
 {
