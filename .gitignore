@@ -1,0 +1,12 @@
+bin/
+obj/
+.vs/
+*.db
+*.suo
+*.user
+*.cache
+*.vsidx
+*.db-shm
+*.db-wal
+frontend/node_modules/
+frontend/.next/
